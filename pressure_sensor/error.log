@@ -1,0 +1,149 @@
+2024-10-11 13:59:33.071142: [Errno 110] Connection timed out
+Traceback (most recent call last):
+  File "/home/tecnico/agsolve/pressure_sensor/sht31.py", line 96, in <module>
+    humidity = sensor.relative_humidity
+  File "/usr/local/lib/python3.9/dist-packages/adafruit_sht31d.py", line 379, in relative_humidity
+    _, humidity = self._read()
+  File "/usr/local/lib/python3.9/dist-packages/adafruit_sht31d.py", line 264, in _read
+    self._cached_temperature, self._cached_humidity = self._data()
+  File "/usr/local/lib/python3.9/dist-packages/adafruit_sht31d.py", line 244, in _data
+    i2c.readinto(data)
+  File "/usr/local/lib/python3.9/dist-packages/adafruit_bus_device/i2c_device.py", line 81, in readinto
+    self.i2c.readfrom_into(self.device_address, buf, start=start, end=end)
+  File "/usr/local/lib/python3.9/dist-packages/busio.py", line 205, in readfrom_into
+    return self._i2c.readfrom_into(address, buffer, stop=True)
+  File "/usr/local/lib/python3.9/dist-packages/adafruit_blinka/microcontroller/generic_linux/i2c.py", line 67, in readfrom_into
+    readin = self._i2c_bus.read_bytes(address, end - start)
+  File "/usr/local/lib/python3.9/dist-packages/Adafruit_PureIO/smbus.py", line 170, in read_bytes
+    return self._device.read(number)
+TimeoutError: [Errno 110] Connection timed out
+2024-10-11 14:41:37.102685: No I2C device at address: 0x44
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/dist-packages/adafruit_bus_device/i2c_device.py", line 175, in __probe_for_device
+    self.i2c.writeto(self.device_address, b"")
+  File "/usr/local/lib/python3.9/dist-packages/busio.py", line 215, in writeto
+    return self._i2c.writeto(address, buffer, stop=True)
+  File "/usr/local/lib/python3.9/dist-packages/adafruit_blinka/microcontroller/generic_linux/i2c.py", line 60, in writeto
+    self._i2c_bus.write_bytes(address, buffer[start:end])
+  File "/usr/local/lib/python3.9/dist-packages/Adafruit_PureIO/smbus.py", line 303, in write_bytes
+    self._device.write(buf)
+TimeoutError: [Errno 110] Connection timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/dist-packages/adafruit_bus_device/i2c_device.py", line 181, in __probe_for_device
+    self.i2c.readfrom_into(self.device_address, result)
+  File "/usr/local/lib/python3.9/dist-packages/busio.py", line 205, in readfrom_into
+    return self._i2c.readfrom_into(address, buffer, stop=True)
+  File "/usr/local/lib/python3.9/dist-packages/adafruit_blinka/microcontroller/generic_linux/i2c.py", line 67, in readfrom_into
+    readin = self._i2c_bus.read_bytes(address, end - start)
+  File "/usr/local/lib/python3.9/dist-packages/Adafruit_PureIO/smbus.py", line 170, in read_bytes
+    return self._device.read(number)
+TimeoutError: [Errno 110] Connection timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/tecnico/agsolve/pressure_sensor/sht31.py", line 18, in <module>
+    sensor = adafruit_sht31d.SHT31D(i2c)
+  File "/usr/local/lib/python3.9/dist-packages/adafruit_sht31d.py", line 187, in __init__
+    self.i2c_device = I2CDevice(i2c_bus, address)
+  File "/usr/local/lib/python3.9/dist-packages/adafruit_bus_device/i2c_device.py", line 62, in __init__
+    self.__probe_for_device()
+  File "/usr/local/lib/python3.9/dist-packages/adafruit_bus_device/i2c_device.py", line 184, in __probe_for_device
+    raise ValueError("No I2C device at address: 0x%x" % self.device_address)
+ValueError: No I2C device at address: 0x44
+2024-10-11 14:41:52.462671: No I2C device at address: 0x44
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/dist-packages/adafruit_bus_device/i2c_device.py", line 175, in __probe_for_device
+    self.i2c.writeto(self.device_address, b"")
+  File "/usr/local/lib/python3.9/dist-packages/busio.py", line 215, in writeto
+    return self._i2c.writeto(address, buffer, stop=True)
+  File "/usr/local/lib/python3.9/dist-packages/adafruit_blinka/microcontroller/generic_linux/i2c.py", line 60, in writeto
+    self._i2c_bus.write_bytes(address, buffer[start:end])
+  File "/usr/local/lib/python3.9/dist-packages/Adafruit_PureIO/smbus.py", line 303, in write_bytes
+    self._device.write(buf)
+TimeoutError: [Errno 110] Connection timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/dist-packages/adafruit_bus_device/i2c_device.py", line 181, in __probe_for_device
+    self.i2c.readfrom_into(self.device_address, result)
+  File "/usr/local/lib/python3.9/dist-packages/busio.py", line 205, in readfrom_into
+    return self._i2c.readfrom_into(address, buffer, stop=True)
+  File "/usr/local/lib/python3.9/dist-packages/adafruit_blinka/microcontroller/generic_linux/i2c.py", line 67, in readfrom_into
+    readin = self._i2c_bus.read_bytes(address, end - start)
+  File "/usr/local/lib/python3.9/dist-packages/Adafruit_PureIO/smbus.py", line 170, in read_bytes
+    return self._device.read(number)
+TimeoutError: [Errno 110] Connection timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/tecnico/agsolve/pressure_sensor/sht31.py", line 18, in <module>
+    sensor = adafruit_sht31d.SHT31D(i2c)
+  File "/usr/local/lib/python3.9/dist-packages/adafruit_sht31d.py", line 187, in __init__
+    self.i2c_device = I2CDevice(i2c_bus, address)
+  File "/usr/local/lib/python3.9/dist-packages/adafruit_bus_device/i2c_device.py", line 62, in __init__
+    self.__probe_for_device()
+  File "/usr/local/lib/python3.9/dist-packages/adafruit_bus_device/i2c_device.py", line 184, in __probe_for_device
+    raise ValueError("No I2C device at address: 0x%x" % self.device_address)
+ValueError: No I2C device at address: 0x44
+2024-10-11 14:46:28.942658: No I2C device at address: 0x44
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/dist-packages/adafruit_bus_device/i2c_device.py", line 175, in __probe_for_device
+    self.i2c.writeto(self.device_address, b"")
+  File "/usr/local/lib/python3.9/dist-packages/busio.py", line 215, in writeto
+    return self._i2c.writeto(address, buffer, stop=True)
+  File "/usr/local/lib/python3.9/dist-packages/adafruit_blinka/microcontroller/generic_linux/i2c.py", line 60, in writeto
+    self._i2c_bus.write_bytes(address, buffer[start:end])
+  File "/usr/local/lib/python3.9/dist-packages/Adafruit_PureIO/smbus.py", line 303, in write_bytes
+    self._device.write(buf)
+TimeoutError: [Errno 110] Connection timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/dist-packages/adafruit_bus_device/i2c_device.py", line 181, in __probe_for_device
+    self.i2c.readfrom_into(self.device_address, result)
+  File "/usr/local/lib/python3.9/dist-packages/busio.py", line 205, in readfrom_into
+    return self._i2c.readfrom_into(address, buffer, stop=True)
+  File "/usr/local/lib/python3.9/dist-packages/adafruit_blinka/microcontroller/generic_linux/i2c.py", line 67, in readfrom_into
+    readin = self._i2c_bus.read_bytes(address, end - start)
+  File "/usr/local/lib/python3.9/dist-packages/Adafruit_PureIO/smbus.py", line 170, in read_bytes
+    return self._device.read(number)
+TimeoutError: [Errno 110] Connection timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/tecnico/agsolve/pressure_sensor/sht31.py", line 29, in <module>
+    sensor = adafruit_sht31d.SHT31D(i2c)
+  File "/usr/local/lib/python3.9/dist-packages/adafruit_sht31d.py", line 187, in __init__
+    self.i2c_device = I2CDevice(i2c_bus, address)
+  File "/usr/local/lib/python3.9/dist-packages/adafruit_bus_device/i2c_device.py", line 62, in __init__
+    self.__probe_for_device()
+  File "/usr/local/lib/python3.9/dist-packages/adafruit_bus_device/i2c_device.py", line 184, in __probe_for_device
+    raise ValueError("No I2C device at address: 0x%x" % self.device_address)
+ValueError: No I2C device at address: 0x44
+2024-10-11 15:37:20.686622: [Errno 110] Connection timed out
+Traceback (most recent call last):
+  File "/home/tecnico/agsolve/pressure_sensor/sht31.py", line 97, in <module>
+    humidity = sensor.relative_humidity
+  File "/usr/local/lib/python3.9/dist-packages/adafruit_sht31d.py", line 379, in relative_humidity
+    _, humidity = self._read()
+  File "/usr/local/lib/python3.9/dist-packages/adafruit_sht31d.py", line 264, in _read
+    self._cached_temperature, self._cached_humidity = self._data()
+  File "/usr/local/lib/python3.9/dist-packages/adafruit_sht31d.py", line 244, in _data
+    i2c.readinto(data)
+  File "/usr/local/lib/python3.9/dist-packages/adafruit_bus_device/i2c_device.py", line 81, in readinto
+    self.i2c.readfrom_into(self.device_address, buf, start=start, end=end)
+  File "/usr/local/lib/python3.9/dist-packages/busio.py", line 205, in readfrom_into
+    return self._i2c.readfrom_into(address, buffer, stop=True)
+  File "/usr/local/lib/python3.9/dist-packages/adafruit_blinka/microcontroller/generic_linux/i2c.py", line 67, in readfrom_into
+    readin = self._i2c_bus.read_bytes(address, end - start)
+  File "/usr/local/lib/python3.9/dist-packages/Adafruit_PureIO/smbus.py", line 170, in read_bytes
+    return self._device.read(number)
+TimeoutError: [Errno 110] Connection timed out
