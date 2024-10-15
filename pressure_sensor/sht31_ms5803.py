@@ -67,23 +67,19 @@ backupDay_existe = os.path.isfile(dayBackup) and os.path.getsize(dayBackup) > 0
 
 with open(secBackup, "a") as file:
 	if not backupSec_existe:
-		file.write("Data          Hora     Temp_atual   Temp_med   Temp_min   Temp_max   Umi_atual   Umi_med   Umi_min   Umi_max\n")
-		#file.write("Data          Hora     Temp_atual   Temp_med   Temp_min   Temp_max   Press_atual   Press_med   Press_min   Press_max   Umi_atual   Umi_med   Umi_min   Umi_max\n")
+		file.write("Data          Hora     Temp_atual   Temp_med   Temp_min   Temp_max   Press_atual   Press_med   Press_min   Press_max   Umi_atual   Umi_med   Umi_min   Umi_max\n")
 
 
 with open(hourBackup, "a") as file:
 	if not backupHour_existe:
-		file.write("Data          Hora     Temp_atual   Temp_med   Temp_min   Temp_max   Umi_atual   Umi_med   Umi_min   Umi_max\n")
-		#file.write("Data          Hora     Temp_atual   Temp_med   Temp_min   Temp_max   Press_atual   Press_med   Press_min   Press_max   Umi_atual   Umi_med   Umi_min   Umi_max\n")
+		file.write("Data          Hora     Temp_atual   Temp_med   Temp_min   Temp_max   Press_atual   Press_med   Press_min   Press_max   Umi_atual   Umi_med   Umi_min   Umi_max\n")
 
 with open(dayBackup, "a") as file:
 	# Escreve o cabeçalho apenas se o arquivo estiver vazio
 	if not backupDay_existe:
-		file.write("Data          Hora     Temp_atual   Temp_med   Temp_min   Temp_max   Umi_atual   Umi_med   Umi_min   Umi_max\n")
-		#file.write("Data          Hora     Temp_atual   Temp_med   Temp_min   Temp_max   Press_atual   Press_med   Press_min   Press_max   Umi_atual   Umi_med   Umi_min   Umi_max\n")
+		file.write("Data          Hora     Temp_atual   Temp_med   Temp_min   Temp_max   Press_atual   Press_med   Press_min   Press_max   Umi_atual   Umi_med   Umi_min   Umi_max\n")
 		
-print("Data          Hora     Temp_atual   Temp_med   Temp_min   Temp_max   Umi_atual   Umi_med   Umi_min   Umi_max\n")
-#print("Data          Hora     Temp_atual   Temp_med   Temp_min   Temp_max   Press_atual   Press_med   Press_min   Press_max   Umi_atual   Umi_med   Umi_min   Umi_max\n")
+print("Data          Hora     Temp_atual   Temp_med   Temp_min   Temp_max   Press_atual   Press_med   Press_min   Press_max   Umi_atual   Umi_med   Umi_min   Umi_max\n")
 
 while True:
 	bus = smbus.SMBus(1)
@@ -93,12 +89,11 @@ while True:
 	
 	try:
 		sensor = adafruit_sht31d.SHT31D(i2c)
-		#s = ms5803py.MS5803()
+		s = ms5803py.MS5803()
 
 		sensor = adafruit_sht31d.SHT31D(i2c)
-		#press, temp = s.read(pressure_osr=512)
+		press, temp = s.read(pressure_osr=512)
 		humidity = sensor.relative_humidity
-		temp = sensor.temperature
 		now = datetime.now()
 		date = now.date()
 		current_time = f"{now.hour:02}:{now.minute:02}:{now.second:02}"
@@ -108,10 +103,10 @@ while True:
 		if (temp < tempC_min):
 			tempC_min = temp
 				
-		#if(press > press_max):
-		#	press_max = press
-		#if(press < press_min):
-		#	press_min = press
+		if(press > press_max):
+			press_max = press
+		if(press < press_min):
+			press_min = press
 		
 		if(humidity > humi_max):
 			humi_max = humidity
@@ -124,10 +119,10 @@ while True:
 		if (temp < tempC_min_hour):
 			tempC_min_hour = temp
 			
-		#if(press > press_max_hour):
-		#	press_max_hour = press
-		#if(press < press_min_hour):
-		#	press_min_hour = press
+		if(press > press_max_hour):
+			press_max_hour = press
+		if(press < press_min_hour):
+			press_min_hour = press
 				
 		if(humidity > humi_max_hour):
 			humi_max_hour = humidity
@@ -141,9 +136,9 @@ while True:
 		tempSumC_hour += temp
 		tempSumC_day += temp
 			
-		#totalPressSum += press
-		#pressSum_hour += press
-		#pressSum_day += press
+		totalPressSum += press
+		pressSum_hour += press
+		pressSum_day += press
 			
 		totalHumSum   += humidity
 		humiditySum_day += humidity
@@ -153,16 +148,14 @@ while True:
 			
 		if(totalReadingCount > 0): 
 			average_temp = totalTempSum / totalReadingCount  
-			#average_press = totalPressSum / totalReadingCount
+			average_press = totalPressSum / totalReadingCount
 			average_humi =totalHumSum / totalReadingCount
 			
 			
-		print(f"{date}   {current_time}   {temp:.2f}°C     {average_temp:.2f}°C     {tempC_min:.2f}°C   {tempC_max:.2f}°C    {humidity:.2f}RH    {average_humi:.2f}RH    {humi_min:.2f}RH   {humi_max:.2f}RH\n")
-		#print(f"{date}   {current_time}   {temp:.2f}°C     {average_temp:.2f}°C     {tempC_min:.2f}°C   {tempC_max:.2f}°C   {press:.2f}mbar  {average_press:.2f}mbar  {press_min:.2f}mbar  {press_max:.2f}mbar   {humidity:.2f}RH   {average_humi:.2f}RH   {humi_min:.2f}RH   {humi_max:.2f}RH\n")
+		print(f"{date}   {current_time}   {temp:.2f}°C     {average_temp:.2f}°C     {tempC_min:.2f}°C   {tempC_max:.2f}°C   {press:.2f}mbar  {average_press:.2f}mbar  {press_min:.2f}mbar  {press_max:.2f}mbar   {humidity:.2f}RH   {average_humi:.2f}RH   {humi_min:.2f}RH   {humi_max:.2f}RH\n")
 			
 		with open(secBackup, "a") as file_append:
-			file_append.write(f"{date}   {current_time}   {temp:.2f}°C     {average_temp:.2f}°C     {tempC_min:.2f}°C   {tempC_max:.2f}°C    {humidity:.2f}RH    {average_humi:.2f}RH    {humi_min:.2f}RH   {humi_max:.2f}RH\n")
-			#file_append.write(f"{date}   {current_time}   {temp:.2f}°C     {average_temp:.2f}°C     {tempC_min:.2f}°C   {tempC_max:.2f}°C   {press:.2f}mbar  {average_press:.2f}mbar  {press_min:.2f}mbar  {press_max:.2f}mbar   {humidity:.2f}RH   {average_humi:.2f}RH   {humi_min:.2f}RH   {humi_max:.2f}RH\n")
+			file_append.write(f"{date}   {current_time}   {temp:.2f}°C     {average_temp:.2f}°C     {tempC_min:.2f}°C   {tempC_max:.2f}°C   {press:.2f}mbar  {average_press:.2f}mbar  {press_min:.2f}mbar  {press_max:.2f}mbar   {humidity:.2f}RH   {average_humi:.2f}RH   {humi_min:.2f}RH   {humi_max:.2f}RH\n")
 			
 			
 		if(readingCount_hour < hour_reading):
@@ -174,10 +167,9 @@ while True:
 		if(readingCount_hour == hour_reading):
 			average_temp_hour = tempSumC_hour / readingCount_hour
 			average_humi_hour = humiditySum_hour / readingCount_hour
-			#average_press_hour = pressSum_hour / readingCount_hour
+			average_press_hour = pressSum_hour / readingCount_hour
 			with open(hourBackup, "a") as file_append:
-				file_append.write(f"{date}   {current_time}   {temp:.2f}°C     {average_temp_hour:.2f}°C     {tempC_min:.2f}°C   {tempC_max:.2f}°C    {humidity:.2f}RH    {average_humi_hour:.2f}RH    {humi_min:.2f}RH   {humi_max:.2f}RH\n")
-				#file_append.write(f"{date}   {current_time}   {temp:.2f}°C     {average_temp_hour:.2f}°C     {tempC_min:.2f}°C   {tempC_max:.2f}°C   {press:.2f}mbar  {average_press_hour:.2f}mbar  {press_min:.2f}mbar  {press_max:.2f}mbar   {humidity:.2f}RH   {average_humi_hour:.2f}RH   {humi_min:.2f}RH   {humi_max:.2f}RH\n")
+				file_append.write(f"{date}   {current_time}   {temp:.2f}°C     {average_temp_hour:.2f}°C     {tempC_min:.2f}°C   {tempC_max:.2f}°C   {press:.2f}mbar  {average_press_hour:.2f}mbar  {press_min:.2f}mbar  {press_max:.2f}mbar   {humidity:.2f}RH   {average_humi_hour:.2f}RH   {humi_min:.2f}RH   {humi_max:.2f}RH\n")
 				
 			readingCount_hour = 0;
 			humiditySum_hour = 0;
@@ -194,10 +186,9 @@ while True:
 		if(readingCount_day == day_reading):
 			average_temp_day = tempSumC_day/day_reading
 			average_humi_day = humiditySum_day/day_reading
-			#average_press_day = pressSum_day/day_reading
+			average_press_day = pressSum_day/day_reading
 			with open(dayBackup, "a") as file_append:
-				file_append.write(f"{date}   {current_time}   {temp:.2f}°C     {average_temp_day:.2f}°C     {tempC_min:.2f}°C   {tempC_max:.2f}°C    {humidity:.2f}RH    {average_humi_day:.2f}RH    {humi_min:.2f}RH   {humi_max:.2f}RH\n")
-				#file_append.write(f"{date}   {current_time}   {temp:.2f}°C     {average_temp_day:.2f}°C     {tempC_min:.2f}°C   {tempC_max:.2f}°C   {press:.2f}mbar  {average_press_day:.2f}mbar  {press_min:.2f}mbar  {press_max:.2f}mbar   {humidity:.2f}RH   {average_humi_day:.2f}RH   {humi_min:.2f}RH   {humi_max:.2f}RH\n")
+				file_append.write(f"{date}   {current_time}   {temp:.2f}°C     {average_temp_day:.2f}°C     {tempC_min:.2f}°C   {tempC_max:.2f}°C   {press:.2f}mbar  {average_press_day:.2f}mbar  {press_min:.2f}mbar  {press_max:.2f}mbar   {humidity:.2f}RH   {average_humi_day:.2f}RH   {humi_min:.2f}RH   {humi_max:.2f}RH\n")
 				
 			
 	except Exception as e:
