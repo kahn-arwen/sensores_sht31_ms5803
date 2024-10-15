@@ -22,4 +22,3 @@ Todos os códigos aqui encontrados possuem a função de escrever esses dados re
  
 *Mudar caminho dos arquivos .TXT para que possam ser gravados corretamente*
 <h1></h1>
-- 
