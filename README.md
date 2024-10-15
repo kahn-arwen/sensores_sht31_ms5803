@@ -8,7 +8,7 @@ Dentro desse diretório, encontramos o código na linguagem C e Python.
 O diretório **pressure_sensor** é onde está guardado os códigos referentes ao sensor MS5803, que recebe os dados de Temperatura e Pressão.
 Dentro desse diretório, encontramos o código na linguagem Python.
 
-<b><h4>SENSORES/h4></b>
+<b><h4>SENSORES</h4></b>
 O diretório **sensores** é onde está guardado os códigos referentes aos sensores SHT31 e MS5803.
 Recebendo os dados de Temperatura, Umidade e Pressão. Dentro desse diretório, encontramos o código na linguagem Python.
 
