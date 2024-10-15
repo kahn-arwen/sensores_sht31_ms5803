@@ -40,8 +40,8 @@ average_humi_day = 0
 aux = 2
 
 sec_backup = "/home/tecnico/agsolve/temp_umi_sensor/sec_backup_py.txt"
-day_backup = "/home/tecnico/agsolve/temp_umi_sensor/hour_backup_py.txt"
-hour_backup = "/home/tecnico/agsolve/temp_umi_sensor/day_backup_py.txt"
+hour_backup = "/home/tecnico/agsolve/temp_umi_sensor/hour_backup_py.txt"
+day_backup = "/home/tecnico/agsolve/temp_umi_sensor/day_backup_py.txt"
 
 writesht = "Data          Hora     Temp_atual   Temp_med   Temp_min   Temp_max   Umi_atual   Umi_med   Umi_min   Umi_max\n"
 
