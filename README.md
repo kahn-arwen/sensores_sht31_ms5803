@@ -20,5 +20,5 @@ Todos os códigos aqui encontrados possuem a função de escrever esses dados re
 - *HOUR_BACKUP.TXT* -> Escreve de 1 em 1 hora a leitura realizada pelos sensores.
 - *DAY_BACKUP.TXT* -> Escreve de 1 em 1 dia (24 horas) a leitura realizada pelos sensores
  
-*Necessário Mudar caminho dos arquivos .TXT para que possam ser gravados corretamente*
+*Necessário mudar caminho dos arquivos .TXT para que possam ser gravados corretamente*
 <h1></h1>
