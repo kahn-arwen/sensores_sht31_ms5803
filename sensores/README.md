@@ -5,7 +5,7 @@ O código a seguir realiza a leitura dos 2 sensores (SHT31 + MS5803), podendo co
 - *DAY_BACKUP.TXT* -> Escreve de 1 em 1 dia (24 horas) a leitura realizada pelos sensores
 
 <h1></h1>
-<h7>Importante</h7> Mudar caminho dos arquivos .TXT para que possam ser gravados corretamente.
+<h5>Importante</h5> Mudar caminho dos arquivos .TXT para que possam ser gravados corretamente.
 <h1></h1>
 
 
