@@ -13,12 +13,12 @@ O diretório **sensores** é onde está guardado os códigos referentes aos sens
 Recebendo os dados de Temperatura, Umidade e Pressão. Dentro desse diretório, encontramos o código na linguagem Python.
 
 <h1></h1>
-<h5>Importante</h5> 
+<h5>Importante!!</h5> 
 
 Todos os códigos aqui encontrados possuem a função de escrever esses dados recebidos em arquivos backup.txt, sendo eles:
 - *SEC_BACKUP.TXT* -> Escreve de 5 em 5 segundos a leitura realizada pelos sensores (Bom para monitoramento).
 - *HOUR_BACKUP.TXT* -> Escreve de 1 em 1 hora a leitura realizada pelos sensores.
 - *DAY_BACKUP.TXT* -> Escreve de 1 em 1 dia (24 horas) a leitura realizada pelos sensores
  
-*Mudar caminho dos arquivos .TXT para que possam ser gravados corretamente*
+*Necessário Mudar caminho dos arquivos .TXT para que possam ser gravados corretamente*
 <h1></h1>
