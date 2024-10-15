@@ -1,4 +1,4 @@
-<h3>**SHT_MS.PY**</h3>
+<h4>SHT_MS.PY</h4>
 O código a seguir realiza a leitura dos 2 sensores (SHT31 + MS5803), podendo coletar as informações de Temperatura, Umidade e Pressão. E recebendo informações, ele grava nos seguintes arquivos:
 - *SEC_BACKUP.TXT* -> Escreve de 5 em 5 segundos a leitura realizada pelos sensores (Bom para monitoramento).
 - *HOUR_BACKUP.TXT* -> Escreve de 1 em 1 hora a leitura realizada pelos sensores.
@@ -9,7 +9,7 @@ O código a seguir realiza a leitura dos 2 sensores (SHT31 + MS5803), podendo co
 
 
 
-<h3>**SENSORES.PY**</h3>
+<h4>SENSORES.PY**</h4>
 O código a seguir realiza a leitura dos 2 sensores. Caso 1 não esteja sendo reconhecido, ele tentará ler somente as informações do outro sensor restante, 
 e escrevendo suas informações recebidas em arquivos Backup, sendo eles:
 - SHT -> Sensor de temperatura e umidade
