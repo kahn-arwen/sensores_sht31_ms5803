@@ -46,7 +46,6 @@ average_humi_hour = 0
 average_press_day = 0
 average_temp_day = 0
 average_humi_day = 0
-
 aux = 2
 
 secSensors = "/home/tecnico/agsolve/sensores/secSensors.txt"
@@ -199,7 +198,6 @@ while True:
 		   readingCount_hour = readingCount_hour+1
 		if (readingCount_day < day_reading):
 			readingCount_day = readingCount_day+1
-			
 				
 		if(readingCount_hour == hour_reading):
 			average_temp_hour = tempSumC_hour / readingCount_hour
@@ -225,11 +223,7 @@ while True:
 			average_humi_day = humiditySum_day/day_reading
 			average_press_day = pressSum_day/day_reading
 			with open(daySensors, "a") as file_append:
-				file_append.write(f"{date}   {current_time}   {temp:.2f}°C     {average_temp_day:.2f}°C     {tempC_min:.2f}°C   {tempC_max:.2f}°C   {press:.2f}mbar  {average_press_day:.2f}mbar  {press_min:.2f}mbar  {press_max:.2f}mbar   {humidity:.2f}RH   {average_humi_day:.2f}RH   {humi_min:.2f}RH   {humi_max:.2f}RH\n")
-				
-		time.sleep(5)	
-		
-		
+				file_append.write(f"{date}   {current_time}   {temp:.2f}°C     {average_temp_day:.2f}°C     {tempC_min:.2f}°C   {tempC_max:.2f}°C   {press:.2f}mbar  {average_press_day:.2f}mbar  {press_min:.2f}mbar  {press_max:.2f}mbar   {humidity:.2f}RH   {average_humi_day:.2f}RH   {humi_min:.2f}RH   {humi_max:.2f}RH\n")	
 		
 #############Tenta ler barômetro
 	except Exception as e:
@@ -275,12 +269,10 @@ while True:
 			with open(secMS, "a") as file_append:
 				file_append.write(f"{date}   {current_time}   {temp:.2f}°C     {average_temp:.2f}°C     {tempC_min:.2f}°C   {tempC_max:.2f}°C    {press:.2f}mbar  {average_press:.2f}mbar  {press_min:.2f}mbar  {press_max:.2f}mbar\n")
 				
-				
 			if(readingCount_hour < hour_reading):
 			   readingCount_hour = readingCount_hour+1
 			if (readingCount_day < day_reading):
 				readingCount_day = readingCount_day+1
-				
 					
 			if(readingCount_hour == hour_reading):
 				average_temp_hour = tempSumC_hour / readingCount_hour
@@ -303,8 +295,6 @@ while True:
 				with open(dayMS, "a") as file_append:
 					file_append.write(f"{date}   {current_time}   {temp:.2f}°C     {average_temp_day:.2f}°C     {tempC_min:.2f}°C   {tempC_max:.2f}°C    {press:.2f}mbar  {average_press_day:.2f}mbar  {press_min:.2f}mbar  {press_max:.2f}mbar\n")
 					
-			
-			
 ################Tenta ler SHT31
 		except Exception as e:
 			try:
@@ -348,18 +338,15 @@ while True:
 					average_temp = totalTempSum / totalReadingCount  
 					average_humi =totalHumSum / totalReadingCount
 					
-					
 				print(f"{date}   {current_time}   {temp:.2f}°C     {average_temp:.2f}°C     {tempC_min:.2f}°C   {tempC_max:.2f}°C    {humidity:.2f}RH    {average_humi:.2f}RH    {humi_min:.2f}RH   {humi_max:.2f}RH\n")
 					
 				with open(secMS, "a") as file_append:
 					file_append.write(f"{date}   {current_time}   {temp:.2f}°C     {average_temp:.2f}°C     {tempC_min:.2f}°C   {tempC_max:.2f}°C    {humidity:.2f}RH    {average_humi:.2f}RH    {humi_min:.2f}RH   {humi_max:.2f}RH\n")
 					
-					
 				if(readingCount_hour < hour_reading):
 				   readingCount_hour = readingCount_hour+1
 				if (readingCount_day < day_reading):
-					readingCount_day = readingCount_day+1
-					
+					readingCount_day = readingCount_day+1	
 						
 				if(readingCount_hour == hour_reading):
 					average_temp_hour = tempSumC_hour / readingCount_hour
@@ -390,16 +377,8 @@ while True:
 				date = now.date()
 				current_time = f"{now.hour:02}:{now.minute:02}:{now.second:02}"
 		
-				error_message = f"{date} {current_time} Erro ao ler do sensor: {e}. Tentando novamente em 5 segundos...\n"
+				error_message = f"{date} {current_time} Erro: {e}. Tentando novamente em 5 segundos...\n"
 				print(error_message)
-		
-				try:
-					with open(secSensors, "a") as file_append:
-						file_append.write(error_message)  # Tenta escrever a mensagem de erro
-				except Exception as file_error:
-					print(f"Erro ao escrever no arquivo: {file_error}")  # Erro ao gravar no arquivo
 				
 		time.sleep(5)
 		
-	
-
