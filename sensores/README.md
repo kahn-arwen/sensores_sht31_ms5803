@@ -1,3 +1,9 @@
+
+
+
+
+**SENSORES.PY**
+
 O código a seguir realiza a leitura dos 2 sensores. Caso 1 não esteja sendo reconhecido, ele tentará ler somente as informações do outro sensor restante, 
 e escrevendo suas informações recebidas em outro arquivo Backup, sendo eles:
 SHT -> Sensor de temperatura e umidade
