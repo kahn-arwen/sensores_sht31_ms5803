@@ -6,6 +6,8 @@ O código a seguir realiza a leitura dos 2 sensores (SHT31 + MS5803), podendo co
 
 
 
+
+
 **SENSORES.PY**
 O código a seguir realiza a leitura dos 2 sensores. Caso 1 não esteja sendo reconhecido, ele tentará ler somente as informações do outro sensor restante, 
 e escrevendo suas informações recebidas em arquivos Backup, sendo eles:
