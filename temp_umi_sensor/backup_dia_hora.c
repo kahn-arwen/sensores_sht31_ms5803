@@ -33,13 +33,10 @@ int day_is_empty() {
     return size == 0; // Retorna 1 se vazio, 0 se não
 }
 
-
 void write_header(FILE *file) {
 	fprintf(file, "Data		Hora       Temp_atual	Temp_med	Temp_min	Temp_max      Umi_atual     Umi_med     Umi_min     Umi_max\n");
 	fflush(file);
 }
-
-
 
 int main(void)
 {
@@ -69,9 +66,7 @@ int main(void)
 	double readingCount_day = 0; 
 	double readingCount_delete_file = 0; 
 	
-	struct tm *localtime(const time_t *timer);
-	
-	
+	struct tm *localtime(const time_t *timer);	
 	int file;
 	char* bus = "/dev/i2c-1";
 	if ((file = open(bus, O_RDWR)) < 0){
@@ -89,8 +84,6 @@ int main(void)
         close(file);
         return 1;
 	}
-	
-	
 	
 	printf("Data		Hora       Temp_atual	Temp_med	Temp_min	Temp_max      Umi_atual     Umi_med     Umi_min     Umi_max\n");
 
@@ -169,27 +162,23 @@ int main(void)
 		double average_temp = (totalReadingCount > 0) ? (totalTempSum / totalReadingCount) : 0;        
 		double average_humi = (totalReadingCount > 0) ? (totalTempHum / totalReadingCount) : 0;
 		
-
 		printf("%s	%s    %.2f °C	 %.2f °C	%.2f °C	 %.2f °C     %.2f RH      %.2f RH    %.2f RH    %.2f RH   \n", 
 		date, time, cTemp, average_temp, tempC_min, tempC_max,humidity, average_humi, humi_min, humi_max);
 
 		fprintf(secBackup, "%s	%s    %.2f °C	 %.2f °C	%.2f °C	 %.2f °C     %.2f RH      %.2f RH    %.2f RH    %.2f RH   \n", 
 		date, time, cTemp, average_temp, tempC_min, tempC_max,humidity, average_humi, humi_min, humi_max);
 		fflush(secBackup); 
-		
-		
-        
+		        
 		if (readingCount_hour < HOUR_READINGS) {
 			readingCount_hour++;  //incrementa +1 a cada leitura(logo na prox leitura será i[2])
 		}
 		if (readingCount_day < DAY_READINGS) {
 			readingCount_day++;
 		}
-		
+
 		
 		//a cada 1h
-		if (readingCount_hour == HOUR_READINGS) {
-			
+		if (readingCount_hour == HOUR_READINGS) {	
 			double average_temp_hour = (readingCount_hour > 0) ? (tempSumC_hour/readingCount_hour) : 0; 
 			double average_humi_hour = (readingCount_hour > 0) ? (humiditySum_hour/readingCount_hour) : 0; 
 
@@ -211,10 +200,8 @@ int main(void)
 		
 		//a cada 1d
 		if (readingCount_day == DAY_READINGS) {
- 
 			double average_temp_day = (readingCount_day > 0) ? (tempSumC_day/readingCount_day) : 0; 
 			double average_humi_day = (readingCount_day > 0) ? (humiditySum_day/readingCount_day) : 0; 
-
 			
 			fprintf(dayBackup, "%s	%s    %.2f °C	 %.2f °C	%.2f °C	 %.2f °C     %.2f RH      %.2f RH    %.2f RH    %.2f RH   \n", 
 			date, time, cTemp, average_temp_day, tempC_min, tempC_max,humidity, average_humi_day, humi_min, humi_max);
@@ -230,11 +217,7 @@ int main(void)
 			tempC_max = -100;
 			humi_min = 100000;
 			humi_max = -100;
-
 		}
-		
-
-
 		sleep(5);
 	}
 	fclose(hourBackup);
@@ -242,9 +225,5 @@ int main(void)
 	fclose(secBackup);
 	close(file);
 	return 0;
-	
-
-	
-	
 }
 
