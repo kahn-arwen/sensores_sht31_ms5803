@@ -10,7 +10,7 @@ Para que haja a comparação entre os 2 sensores : <br />
 Bar1 = 0x77 - > Barômetro Nacional <br />
 Bar2 = 0x76 - > Barômetro Internacional <br /><br />
 Todos os códigos aqui encontrados possuem a função de escrever esses dados recebidos em arquivos backup.txt, sendo eles: <br />
-- <b>SEC_BACKUP.TXT</b> -> Escreve de 5 em 5 segundos a leitura realizada pelos sensores (Bom para monitoramento). br />
+- <b>SEC_BACKUP.TXT</b> -> Escreve de 5 em 5 segundos a leitura realizada pelos sensores (Bom para monitoramento). <br />
 - <b>HOUR_BACKUP.TXT</b> -> Escreve de 1 em 1 hora a leitura realizada pelos sensores. <br />
 - <b>DAY_BACKUP.TXT</b> -> Escreve de 1 em 1 dia (24 horas) a leitura realizada pelos sensores <br /> <br />
  
