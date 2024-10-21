@@ -13,6 +13,7 @@ Todos os códigos aqui encontrados possuem a função de escrever esses dados re
 <p> Para que haja a distinção entre os 2 sensores : <br />
 Bar1 = 0x77 - > Barômetro Nacional <br />
 Bar2 = 0x76 - > Barômetro Internacional <br /><br />
+<b><i>Obs: Foram criados os arquivos: _bar1, _bar2 onde há as informações separadas de cada sensor. Porém foi criado o arquivo que contém os dados recebidos por ambos em um só arquivo (hour_backup.txt, day_backup.txt)</i></b>
 
 <i>**Necessário mudar caminho dos arquivos .TXT para que possam ser gravados corretamente </i>
 <h1></h1>
