@@ -1,5 +1,5 @@
 
-<b><h4>BAROMETERS</h4></b>
+#BAROMETERS
 O diretório **Barometers** é onde está guardado o código de comparação entre dois sensores MS5803, que recebe os dados de Temperatura e Pressão.
 Dentro desse diretório, encontramos o código na linguagem Python.
 
