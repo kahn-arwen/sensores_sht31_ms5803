@@ -12,6 +12,10 @@ Dentro desse diretório, encontramos o código na linguagem Python.
 O diretório **sensores** é onde está guardado os códigos referentes aos sensores SHT31 e MS5803.
 Recebendo os dados de Temperatura, Umidade e Pressão. Dentro desse diretório, encontramos o código na linguagem Python.
 
+<b><h4>BAROMETERS</h4></b>
+O diretório **Barometers** é onde está guardado o código de comparação entre dois barômetros MS5803.
+Recebendo os dados de Temperatura, Umidade e Pressão. Dentro desse diretório, encontramos o código na linguagem Python.
+
 <h1></h1>
 <h5>Importante!!</h5> 
 
