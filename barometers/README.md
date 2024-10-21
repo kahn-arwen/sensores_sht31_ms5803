@@ -15,5 +15,5 @@ Dentro desse diretório, encontramos o código na linguagem Python.
 Bar1 = 0x77 - > Barômetro Nacional <br />
 Bar2 = 0x76 - > Barômetro Internacional <br /><br />
 Todos os códigos aqui encontrados possuem a função de escrever esses dados recebidos em arquivos backup.txt, sendo eles: <br />
-*Necessário mudar caminho dos arquivos .TXT para que possam ser gravados corretamente*
+<i>Necessário mudar caminho dos arquivos .TXT para que possam ser gravados corretamente* </i>
 <h1></h1>
