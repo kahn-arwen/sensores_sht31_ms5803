@@ -8,7 +8,7 @@ Dentro desse diretório, encontramos o código na linguagem Python.
 <h5>Importante!!</h5> 
 Para que haja a comparação entre os 2 sensores : <br />
 Bar1 = 0x77 - > Barômetro Nacional <br />
-Bar2 = 0x76 - > Barômetro Internacional <br />
+Bar2 = 0x76 - > Barômetro Internacional <br /><br />
 Todos os códigos aqui encontrados possuem a função de escrever esses dados recebidos em arquivos backup.txt, sendo eles: <br />
 - *SEC_BACKUP.TXT* -> Escreve de 5 em 5 segundos a leitura realizada pelos sensores (Bom para monitoramento). br />
 - *HOUR_BACKUP.TXT* -> Escreve de 1 em 1 hora a leitura realizada pelos sensores. <br />
