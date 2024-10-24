@@ -1,6 +1,6 @@
 <h1></h1>
 <h2> !!! </h2>
-<p>É necessário os dar os seguintes comandos no terminal para que o cógido funcione  </p>
+<p>É necessário os dar os seguintes comandos no terminal para que o código funcione corretamente  </p>
 <code>pip install adafruit-circuitpython-sht31d</code>
 <code>pip install smbus</code>
 <code>sudo apt-get install i2c-tools</code>
