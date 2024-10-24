@@ -11,10 +11,10 @@
 <table>
 <tr>
 <td>
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEAnJ29exhYAwGashW_eJUodFbDI3EbSVMww&s" width=150px height=150px display=inline-block>
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEAnJ29exhYAwGashW_eJUodFbDI3EbSVMww&s" width=180px height=180px display=inline-block>
 </td>
 <td>
-<img src="https://www.plexishop.it/media/catalog/product/cache/3/image/650x/040ec09b1e35df139433887a97daa66f/m/o/modulo_gy-sht30-d_sensore_digitale_di_temperatura_e_umidit_2.jpg" width=150px height=150px display= inline-block>
+<img src="https://www.plexishop.it/media/catalog/product/cache/3/image/650x/040ec09b1e35df139433887a97daa66f/m/o/modulo_gy-sht30-d_sensore_digitale_di_temperatura_e_umidit_2.jpg" width=180px height=180px display= inline-block>
 </td>
  </tr>
 </table>
