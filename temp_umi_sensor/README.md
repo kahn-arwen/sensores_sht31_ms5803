@@ -3,7 +3,8 @@
 <p>É necessário os dar os seguintes comandos no terminal para que o código funcione corretamente  </p>
 <code>pip install adafruit-circuitpython-sht31d</code>
 <code>pip install smbus</code>
-<code>sudo apt-get install i2c-tools</code>
+<code>sudo apt-get install i2c-tools</code><br>
+<i>Não esqueça de verificar se a interface I2C está habilitada</i>
 <h1></h1>
 <b><h3>BACKUP_DIA_HORA.C</h3></b>
 <b><h3>BACKUP_PYTHON.PY</h3></b>
