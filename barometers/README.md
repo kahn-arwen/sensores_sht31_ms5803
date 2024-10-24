@@ -4,7 +4,7 @@
 <code>pip install ms5803py</code>
 <code>pip install smbus</code>
 <code>sudo apt-get install i2c-tools</code>
-<s>Não esqueça de verificar se a interface I2C está habilitada</s>
+<i>Não esqueça de verificar se a interface I2C está habilitada</i>
 
 <h1></h1>
 <b><h3>BAROMETERS</b></h3>
