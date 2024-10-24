@@ -1,6 +1,6 @@
 <h2> !!! </h2>
 
-<p>É necessário os dar os seguintes comandos no terminal para que o cógido funcione  </p>
+<p>É necessário os dar os seguintes comandos no terminal para que os códigos funcionem corretamente  </p>
 <code>pip install ms5803py</code>
 <code>sudo pip3 install adafruit-circuitpython-sht31d</code>
 <code>pip install smbus</code>
