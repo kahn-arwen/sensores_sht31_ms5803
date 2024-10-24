@@ -3,7 +3,8 @@
 <p>É necessário os dar os seguintes comandos no terminal para que o código funcione corretamente  </p>
 <code>pip install ms5803py</code>
 <code>pip install smbus</code>
-<code>sudo apt-get install i2c-tools</code>
+<code>sudo apt-get install i2c-tools</code><br>
+<i>Não esqueça de verificar se a interface I2C está habilitada</i>
 <h1></h1>
 <b><h3>MS5803.PY</h3></b>
 O código a seguir faz a leitura do sensor MS5803, possibilitando a captura dos dados sobre : Temperatura e Pressão.
