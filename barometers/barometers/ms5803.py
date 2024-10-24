@@ -4,11 +4,9 @@ import os
 import schedule
 from datetime import datetime, timedelta
 
-bar1 = 0x77 #Nacional (pequeno)
+#Endereço I2C dos barometros
+bar1 = 0x77 #Nacional (pequeno da placa vermelha)
 bar2 = 0x76 #Internacional (grande)
-
-#day_reading = 17280 #5 segundos de espera
-#hour_reading = 720 # 60(seg) * 60(min) = 1200(1h em seg)/5(intervalo de 5 seg)
 
 hour = '07:00:00'   #Definição de horário para o backup diário
 hours = [ '00:00:00','01:00:00','02:00:00','03:00:00','04:00:00', #backup de 1 em 1hr por 24h
@@ -42,21 +40,21 @@ tempSumC_day_bar1 = 0
 tempSumC_day_bar2 = 0
 pressSum_day_bar1 = 0
 pressSum_day_bar2 = 0
-##                ##
+
 tempSumC_hour_bar1 = 0
 tempSumC_hour_bar2 = 0
 pressSum_hour_bar1 = 0
 pressSum_hour_bar2 = 0
-#
+
 totalTempSum_bar1  = 0
 totalTempSum_bar2  = 0
 totalPressSum_bar1 = 0
 totalPressSum_bar2 = 0
-#
+
 totalReadingCount = 0	
 readingCount_hour = 0
 readingCount_day  = 0
-#
+
 average_press_bar1 = 0
 average_press_bar2 = 0 
 average_temp_bar1  = 0
@@ -77,7 +75,6 @@ dayBackup_bar1  = "/home/tecnico/agsolve/barometers/day_Backup_bar1.txt"
 secBackup_bar2 = "/home/tecnico/agsolve/barometers/sec_Backup_bar2.txt"
 hourBackup_bar2 = "/home/tecnico/agsolve/barometers/hour_Backup_bar2.txt"
 dayBackup_bar2 = "/home/tecnico/agsolve/barometers/day_Backup_bar2.txt"
-
 
 hourBackup = "/home/tecnico/agsolve/barometers/hour_Backup.txt"
 dayBackup = "/home/tecnico/agsolve/barometers/day_Backup.txt"
@@ -200,13 +197,12 @@ while True:
         
         now = datetime.now()
         date = now.date()
-        #current_time = f"{now.hour:02}:{now.minute:02}:{now.second:02}"
         current_time = now.strftime('%H:%M:%S')
-
         hora = current_time
-        #Barometer 1 = nacional
+        
+        #Barometer 1 
         cTemp_bar1, pressure_bar1 = readBarometer(bar1)
-        #Barometer 2 = internacional
+        #Barometer 2 
         cTemp_bar2, pressure_bar2 = readBarometer(bar2)
 		    
         #acum average
@@ -225,13 +221,14 @@ while True:
         pressSum_day_bar2  += pressure_bar2
             
         totalReadingCount = totalReadingCount+1
-                
+        segundos += 1     
+           
         if(totalReadingCount > 0): 
             average_temp_bar1 = totalTempSum_bar1 / totalReadingCount  
             average_temp_bar2 = totalTempSum_bar2 / totalReadingCount  
             average_press_bar1 = totalPressSum_bar1 / totalReadingCount
-            average_press_bar2 = totalPressSum_bar2 / totalReadingCount		
-        segundos += 1
+            average_press_bar2 = totalPressSum_bar2 / totalReadingCount	
+            	
         if (segundos == 5):	
                 #min/max temp/press BAR1
             if(cTemp_bar1 > tempC_max_bar1):
@@ -270,9 +267,7 @@ while True:
                 press_max_hour_bar2 = pressure_bar2
             if(pressure_bar2 < press_min_hour_bar2):
                 press_min_hour_bar2 = pressure_bar2
-                
-            
-                
+             
             print(f"{date}   {current_time}   1     {cTemp_bar1:.2f}\t\t{average_temp_bar1:.2f}\t\t{tempC_min_bar1:.2f}\t\t{tempC_max_bar1:.2f}\t\t{pressure_bar1:.2f}\t\t{average_press_bar1:.2f}\t\t{press_min_bar1:.2f}\t\t{press_max_bar1:.2f}\n")   
             print(f"                        2     {cTemp_bar2:.2f}\t\t{average_temp_bar2:.2f}\t\t{tempC_min_bar2:.2f}\t\t{tempC_max_bar2:.2f}\t\t{pressure_bar2:.2f}\t\t{average_press_bar2:.2f}\t\t{press_min_bar2:.2f}\t\t{press_max_bar2:.2f}\n")
             
@@ -281,16 +276,13 @@ while True:
                 file_append.write(f"{date}   {current_time}   1     {cTemp_bar1:.2f}\t\t{average_temp_bar1:.2f}\t\t{tempC_min_bar1:.2f}\t\t{tempC_max_bar1:.2f}\t\t{pressure_bar1:.2f}\t\t{average_press_bar1:.2f}\t\t{press_min_bar1:.2f}\t\t{press_max_bar1:.2f}\n")   
             with open(secBackup_bar2, "a") as file_append:
                 file_append.write(f"{date}   {current_time}   1     {cTemp_bar2:.2f}\t\t{average_temp_bar2:.2f}\t\t{tempC_min_bar2:.2f}\t\t{tempC_max_bar2:.2f}\t\t{pressure_bar2:.2f}\t\t{average_press_bar2:.2f}\t\t{press_min_bar2:.2f}\t\t{press_max_bar2:.2f}\n")   
-            segundos = 0	
-			
-        #if(readingCount_hour < hour_reading):
-        readingCount_hour +=1
-        #if (readingCount_day < day_reading):
-        readingCount_day +=1
-		#if(readingCount_hour == hour_reading):	
-        #for item in hours: 
-        if hora in hours:
             
+            segundos = 0	
+            
+        readingCount_hour +=1
+        readingCount_day +=1
+        
+        if hora in hours:
             average_temp_hour_bar1 = tempSumC_hour_bar1  / readingCount_hour
             average_temp_hour_bar2 = tempSumC_hour_bar2  / readingCount_hour
             average_press_hour_bar1 = pressSum_hour_bar1 / readingCount_hour
@@ -302,8 +294,7 @@ while True:
                 file_append.write(f"{date}   {current_time}   2     {cTemp_bar2:.2f}\t\t{average_temp_hour_bar2:.2f}\t\t{tempC_min_bar2:.2f}\t\t{tempC_max_bar2:.2f}\t\t{pressure_bar2:.2f}\t\t{average_press_hour_bar2:.2f}\t\t{press_min_bar2:.2f}\t\t{press_max_bar2:.2f}\n")
             with open(hourBackup, "a") as file_append:
                 file_append.write(f"{date}   {current_time}   1     {cTemp_bar1:.2f}\t\t{average_temp_hour_bar1:.2f}\t\t{tempC_min_bar1:.2f}\t\t{tempC_max_bar1:.2f}\t\t{pressure_bar1:.2f}\t\t{average_press_hour_bar1:.2f}\t\t{press_min_bar1:.2f}\t\t{press_max_bar1:.2f}\n")   
-                file_append.write(f"                        2     {cTemp_bar2:.2f}\t\t{average_temp_hour_bar2:.2f}\t\t{tempC_min_bar2:.2f}\t\t{tempC_max_bar2:.2f}\t\t{pressure_bar2:.2f}\t\t{average_press_hour_bar2:.2f}\t\t{press_min_bar2:.2f}\t\t{press_max_bar2:.2f}\n")
-
+                file_append.write(f"                        2     {cTemp_bar2:.2f}\t\t{average_temp_hour_bar2:.2f}\t\t{tempC_min_bar2:.2f}\t\t{tempC_max_bar2:.2f}\t\t{pressure_bar2:.2f}\t\t{average_press_hour_bar2:.2f}\t\t{press_min_bar2:.2f}\t\t{press_max_bar2:.2f}\n\n")
 
             readingCount_hour  = 0
             tempSumC_hour_bar1 = 0
@@ -335,7 +326,7 @@ while True:
                 file_append.write(f"                        2     {cTemp_bar2:.2f}\t\t{average_temp_day_bar2:.2f}\t\t{tempC_min_bar2:.2f}\t\t{tempC_max_bar2:.2f}\t\t{pressure_bar2:.2f}\t\t{average_press_day_bar2:.2f}\t\t{press_min_bar2:.2f}\t\t{press_max_bar2:.2f}\n\n")
 
             readingCount_day  = 0
-            tempSumC_day_bar1_bar1 = 0
+            tempSumC_day_bar1 = 0
             tempSumC_day_bar2 = 0
             pressSum_day_bar1 = 0
             pressSum_day_bar2 = 0
@@ -344,8 +335,6 @@ while True:
         now = datetime.now()
         date = now.date()
         current_time = f"{now.hour:02}:{now.minute:02}:{now.second:02}"
-    
         error_message = f"{date} {current_time} Erro: {e}. Tentando novamente...\n"
         print(error_message)
         
-    #time.sleep(3.5)
