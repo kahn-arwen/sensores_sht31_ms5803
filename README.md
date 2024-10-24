@@ -1,13 +1,4 @@
 # sensores_sht31_ms5803
-<h2> !!! </h2>
-<p>É necessário os dar os seguintes comandos no terminal para que o código funcione corretamente  </p>
-<code>pip install ms5803py</code>
-<code>sudo pip3 install adafruit-circuitpython-sht31d</code>
-<code>pip install smbus</code>
-<code>sudo apt-get install i2c-tools</code><br><br>
-<i>Não esqueça de verificar se a interface I2C está habilitada</i>
-<h1></h1>
-<b><h4>TEMP_UMI_SENSOR</h4></b>
 <table>
 <tr>
 <td>
@@ -18,6 +9,16 @@
 </td>
  </tr>
 </table>
+<h2> !!! </h2>
+<p>É necessário os dar os seguintes comandos no terminal para que o código funcione corretamente  </p>
+<code>pip install ms5803py</code>
+<code>sudo pip3 install adafruit-circuitpython-sht31d</code>
+<code>pip install smbus</code>
+<code>sudo apt-get install i2c-tools</code><br><br>
+<i>Não esqueça de verificar se a interface I2C está habilitada</i>
+<h1></h1>
+<b><h4>TEMP_UMI_SENSOR</h4></b>
+
 O diretório **temp_umi_sensor** é onde está guardado os códigos referentes ao sensor SHT31, que recebe os dados de Temperatura e Umidade.
 Dentro desse diretório, encontramos o código na linguagem C e Python.
 
