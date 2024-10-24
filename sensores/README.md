@@ -1,3 +1,11 @@
+<h2> !!! </h2>
+
+<p>É necessário os dar os seguintes comandos no terminal para que o cógido funcione  </p>
+<code>pip install ms5803py</code>
+<code>sudo pip3 install adafruit-circuitpython-sht31d</code>
+<code>pip install smbus</code>
+<code>sudo apt-get install i2c-tools</code>
+<h1></h1>
 <b><h4>SHT_MS.PY</h4></b>
 O código a seguir realiza a leitura dos 2 sensores (SHT31 + MS5803), podendo coletar as informações de Temperatura, Umidade e Pressão. E recebendo informações, ele grava nos seguintes arquivos:
 - *SEC_BACKUP.TXT* -> Escreve de 5 em 5 segundos a leitura realizada pelos sensores (Bom para monitoramento).
@@ -20,9 +28,4 @@ e escrevendo suas informações recebidas em arquivos Backup, sendo eles:
 e tendo como parâmetro Sec ( Escreve a cada 5 segundos ) - Hour ( Escreve de 1 em 1 hora ) - Day ( Escreve de 1 em 1 dia(24h) )
 
 Caso não consiga ler ambos, ele enviará uma mensagem mostrando qual erro ocorreu.
-<h2> !!! </h2>
-<p>É necessário os dar os seguintes comandos no terminal para que o cógido funcione  </p>
-<code>pip install ms5803py</code>
-<code>sudo pip3 install adafruit-circuitpython-sht31d</code>
-<code>pip install smbus</code>
-<code>sudo apt-get install i2c-tools</code>
+
