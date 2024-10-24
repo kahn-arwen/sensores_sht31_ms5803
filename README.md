@@ -8,8 +8,8 @@
 <i>Não esqueça de verificar se a interface I2C está habilitada</i>
 <h1></h1>
 <b><h4>TEMP_UMI_SENSOR</h4></b>
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEAnJ29exhYAwGashW_eJUodFbDI3EbSVMww&s">
-<img src="https://www.plexishop.it/media/catalog/product/cache/3/image/650x/040ec09b1e35df139433887a97daa66f/m/o/modulo_gy-sht30-d_sensore_digitale_di_temperatura_e_umidit_2.jpg">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEAnJ29exhYAwGashW_eJUodFbDI3EbSVMww&s" width=40px height=400px>
+<img src="https://www.plexishop.it/media/catalog/product/cache/3/image/650x/040ec09b1e35df139433887a97daa66f/m/o/modulo_gy-sht30-d_sensore_digitale_di_temperatura_e_umidit_2.jpg" width=40px height=400px>
 O diretório **temp_umi_sensor** é onde está guardado os códigos referentes ao sensor SHT31, que recebe os dados de Temperatura e Umidade.
 Dentro desse diretório, encontramos o código na linguagem C e Python.
 
