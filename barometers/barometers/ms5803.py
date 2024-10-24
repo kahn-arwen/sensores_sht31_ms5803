@@ -272,7 +272,7 @@ while True:
             with open(secBackup_bar1, "a") as file_append:
                 file_append.write(f"{date}   {current_time}   1     {cTemp_bar1:.2f}\t\t{average_temp_bar1:.2f}\t\t{tempC_min_bar1:.2f}\t\t{tempC_max_bar1:.2f}\t\t{pressure_bar1:.2f}\t\t{average_press_bar1:.2f}\t\t{press_min_bar1:.2f}\t\t{press_max_bar1:.2f}\n")   
             with open(secBackup_bar2, "a") as file_append:
-                file_append.write(f"{date}   {current_time}   1     {cTemp_bar2:.2f}\t\t{average_temp_bar2:.2f}\t\t{tempC_min_bar2:.2f}\t\t{tempC_max_bar2:.2f}\t\t{pressure_bar2:.2f}\t\t{average_press_bar2:.2f}\t\t{press_min_bar2:.2f}\t\t{press_max_bar2:.2f}\n")   
+                file_append.write(f"{date}   {current_time}   2     {cTemp_bar2:.2f}\t\t{average_temp_bar2:.2f}\t\t{tempC_min_bar2:.2f}\t\t{tempC_max_bar2:.2f}\t\t{pressure_bar2:.2f}\t\t{average_press_bar2:.2f}\t\t{press_min_bar2:.2f}\t\t{press_max_bar2:.2f}\n")   
             
             segundos = 0	
             
