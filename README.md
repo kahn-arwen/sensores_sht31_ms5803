@@ -5,6 +5,7 @@
 <code>sudo pip3 install adafruit-circuitpython-sht31d</code>
 <code>pip install smbus</code>
 <code>sudo apt-get install i2c-tools</code>
+<s>Não esqueça de verificar se a interface I2C está habilitada</s>
 <h1></h1>
 <b><h4>TEMP_UMI_SENSOR</h4></b>
 O diretório **temp_umi_sensor** é onde está guardado os códigos referentes ao sensor SHT31, que recebe os dados de Temperatura e Umidade.
