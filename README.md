@@ -9,7 +9,7 @@
 </td>
  </tr>
 </table>
-<h2> !!! </h2>
+<h2> </h2>
 <p>É necessário os dar os seguintes comandos no terminal para que o código funcione corretamente  </p>
 <code>pip install ms5803py</code>
 <code>sudo pip3 install adafruit-circuitpython-sht31d</code>
