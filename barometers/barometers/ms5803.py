@@ -92,7 +92,6 @@ backupDay_existe = os.path.isfile(dayBackup) and os.path.getsize(dayBackup) > 0
 
 write_header = "Data          Hora     Bar   Temp_atual       Temp_med         Temp_min        Temp_max        Press_atual     Press_med      Press_min       Press_max\n"
 
-
 with open(secBackup_bar1, "a") as file:
     # Escreve o cabeçalho apenas se o arquivo estiver vazio
     if not backupSec_existe_bar1:
@@ -188,7 +187,6 @@ def readBarometer(address):
     cTemp = TEMP / 100.0
     pressure = ((((D1 * SENS) / 2097152) - OFF) / 32768.0) / 100.0
     
-    
     return cTemp, pressure
 
 while True:
@@ -270,7 +268,6 @@ while True:
              
             print(f"{date}   {current_time}   1     {cTemp_bar1:.2f}\t\t{average_temp_bar1:.2f}\t\t{tempC_min_bar1:.2f}\t\t{tempC_max_bar1:.2f}\t\t{pressure_bar1:.2f}\t\t{average_press_bar1:.2f}\t\t{press_min_bar1:.2f}\t\t{press_max_bar1:.2f}\n")   
             print(f"                        2     {cTemp_bar2:.2f}\t\t{average_temp_bar2:.2f}\t\t{tempC_min_bar2:.2f}\t\t{tempC_max_bar2:.2f}\t\t{pressure_bar2:.2f}\t\t{average_press_bar2:.2f}\t\t{press_min_bar2:.2f}\t\t{press_max_bar2:.2f}\n")
-            
         
             with open(secBackup_bar1, "a") as file_append:
                 file_append.write(f"{date}   {current_time}   1     {cTemp_bar1:.2f}\t\t{average_temp_bar1:.2f}\t\t{tempC_min_bar1:.2f}\t\t{tempC_max_bar1:.2f}\t\t{pressure_bar1:.2f}\t\t{average_press_bar1:.2f}\t\t{press_min_bar1:.2f}\t\t{press_max_bar1:.2f}\n")   
