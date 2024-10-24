@@ -4,7 +4,7 @@
 <code>pip install ms5803py</code>
 <code>sudo pip3 install adafruit-circuitpython-sht31d</code>
 <code>pip install smbus</code>
-<code>sudo apt-get install i2c-tools</code><br>
+<code>sudo apt-get install i2c-tools</code><br><br>
 <i>Não esqueça de verificar se a interface I2C está habilitada</i>
 <h1></h1>
 <b><h4>SHT_MS.PY</h4></b>
