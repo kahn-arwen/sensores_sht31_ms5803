@@ -18,3 +18,11 @@ Todos os códigos aqui encontrados possuem a função de escrever esses dados re
 Bar1 = 0x77 - > Barômetro Nacional <br />
 Bar2 = 0x76 - > Barômetro Internacional <br /><br />
 <b><i>Obs: Foram criados os arquivos: _bar(1/2)
+<h1></h1>
+<h2> !!! </h2>
+<p>É necessário os dar os seguintes comandos no terminal para que o cógido funcione  </p>
+<code>pip install ms5803py</code>
+<code>pip install smbus</code>
+<code>sudo apt-get install i2c-tools</code>
+
+
