@@ -5,7 +5,7 @@ Dentro desse diretório, encontramos o código na linguagem Python.
 <h1></h1>
 <h5>Correção do Código:</h5>
 <p>Foi acrescentado no código as variáveis: </p>
-- 'hour' = Onde você colocará o horário desejado para receber os dados recolhidos durante o dia (24h)
+- 'hour' = Onde você colocará o horário desejado para receber os dados recolhidos durante o dia (24h) \n
 - 'hours' = Definição de horários no formato hh:mm:ss para retorno de dados de 1 em 1 hora (exata)
 <h1></h1>
 <h5>Importante!!</h5> 
