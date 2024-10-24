@@ -7,3 +7,8 @@ Escrevendo as informações adquiridas nos seguintes arquivos:
 <h1></h1>
 <h5>Importante</h5> Mudar caminho dos arquivos .TXT para que possam ser gravados corretamente.
 <h1></h1>
+<h2> !!! </h2>
+<p>É necessário os dar os seguintes comandos no terminal para que o cógido funcione  </p>
+<code>pip install ms5803py</code>
+<code>pip install smbus</code>
+<code>sudo apt-get install i2c-tools</code>
