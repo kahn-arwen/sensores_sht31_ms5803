@@ -4,6 +4,8 @@
 <code>pip install ms5803py</code>
 <code>pip install smbus</code>
 <code>sudo apt-get install i2c-tools</code>
+<s>Não esqueça de verificar se a interface I2C está habilitada</s>
+
 <h1></h1>
 <b><h3>BAROMETERS</b></h3>
 O diretório **Barometers** é onde está guardado o código de comparação entre dois sensores MS5803, que recebe os dados de Temperatura e Pressão.
