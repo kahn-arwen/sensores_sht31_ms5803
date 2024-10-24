@@ -1,4 +1,10 @@
-
+<h1></h1>
+<h2> !!! </h2>
+<p>É necessário os dar os seguintes comandos no terminal para que o código funcione corretamente </p>
+<code>pip install ms5803py</code>
+<code>pip install smbus</code>
+<code>sudo apt-get install i2c-tools</code>
+<h1></h1>
 <b><h3>BAROMETERS</b></h3>
 O diretório **Barometers** é onde está guardado o código de comparação entre dois sensores MS5803, que recebe os dados de Temperatura e Pressão.
 Dentro desse diretório, encontramos o código na linguagem Python.
@@ -16,9 +22,3 @@ Bar2 = 0x76 - > Barômetro Internacional <br /><br />
 <b><i>Obs: Foram criados os arquivos: _bar1, _bar2 onde há as informações separadas de cada sensor. Porém foi criado o arquivo que contém os dados recebidos por ambos (hour_backup.txt, day_backup.txt)</i></b>
 
 <i>**Necessário mudar caminho dos arquivos .TXT para que possam ser gravados corretamente </i>
-<h1></h1>
-<h2> !!! </h2>
-<p>É necessário os dar os seguintes comandos no terminal para que o cógido funcione  </p>
-<code>pip install ms5803py</code>
-<code>pip install smbus</code>
-<code>sudo apt-get install i2c-tools</code>
