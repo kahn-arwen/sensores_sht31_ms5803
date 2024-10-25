@@ -1,0 +1,3 @@
+Data          Hora     Bar   Temp_atual       Temp_med         Temp_min        Temp_max        Press_atual     Press_med      Press_min       Press_max
+2024-10-23   07:00:00   2     26.22		26.48		26.22		26.81		939.49		938.01		936.83		939.61
+2024-10-24   07:00:00   2     26.15		27.27		26.15		28.83		936.89		933.75		931.31		938.51
