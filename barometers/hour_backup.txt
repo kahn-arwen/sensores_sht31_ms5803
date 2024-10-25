@@ -160,3 +160,5 @@ Data          Hora     Bar    Temp_atual   Temp_med   Temp_min   Temp_max   Pres
 
 2024-10-21   05:46:33   1     23.97°C      23.97°C    23.74°C    24.77°C     945.21mbar   943.67mbar  942.03mbar  946.13mbar
 						2     23.57°C      23.60°C    23.55°C    23.88°C     941.63mbar   941.35mbar  940.57mbar  941.63mbar
+
+4.53		24.42		24.66		937.60		937.31		936.89		937.67
