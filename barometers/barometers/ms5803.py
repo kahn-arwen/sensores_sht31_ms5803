@@ -227,46 +227,46 @@ while True:
             average_press_bar1 = totalPressSum_bar1 / totalReadingCount
             average_press_bar2 = totalPressSum_bar2 / totalReadingCount	
             	
-            #min/max temp/press BAR1
-        if(cTemp_bar1 > tempC_max_bar1):
-            tempC_max_bar1 = cTemp_bar1
-        if (cTemp_bar1 < tempC_min_bar1):
-            tempC_min_bar1 = cTemp_bar1
-        if(cTemp_bar1 > tempC_max_hour_bar1):
-            tempC_max_hour_bar1 = cTemp_bar1
-        if (cTemp_bar1 < tempC_min_hour_bar1):
-            tempC_min_hour_bar1 = cTemp_bar1
-                    
-        if(pressure_bar1 > press_max_bar1):
-            press_max_bar1 = pressure_bar1
-        if(pressure_bar1 < press_min_bar1):
-            press_min_bar1 = pressure_bar1
-        if(pressure_bar1 > press_max_hour_bar1):
-            press_max_hour_bar1 = pressure_bar1
-        if(pressure_bar1 < press_min_hour_bar1):
-            press_min_hour_bar1 = pressure_bar1
-            
-        #min/max temp/press BAR2
-        if(cTemp_bar2 > tempC_max_bar2):
-            tempC_max_bar2 = cTemp_bar2
-        if (cTemp_bar2 < tempC_min_bar2):
-            tempC_min_bar2 = cTemp_bar2
-        if(cTemp_bar2 > tempC_max_hour_bar2):
-            tempC_max_hour_bar2 = cTemp_bar2
-        if (cTemp_bar2 < tempC_min_hour_bar2):
-            tempC_min_hour_bar2 = cTemp_bar2
-                    
-        if(pressure_bar2 > press_max_bar2):
-            press_max_bar2 = pressure_bar2
-        if(pressure_bar2 < press_min_bar2):
-            press_min_bar2 = pressure_bar2
-        if(pressure_bar2 > press_max_hour_bar2):
-            press_max_hour_bar2 = pressure_bar2
-        if(pressure_bar2 < press_min_hour_bar2):
-            press_min_hour_bar2 = pressure_bar2
+        
     
         if (segundos == 5):	
-            
+            #min/max temp/press BAR1
+            if(cTemp_bar1 > tempC_max_bar1):
+                tempC_max_bar1 = cTemp_bar1
+            if (cTemp_bar1 < tempC_min_bar1):
+                tempC_min_bar1 = cTemp_bar1
+            if(cTemp_bar1 > tempC_max_hour_bar1):
+                tempC_max_hour_bar1 = cTemp_bar1
+            if (cTemp_bar1 < tempC_min_hour_bar1):
+                tempC_min_hour_bar1 = cTemp_bar1
+                        
+            if(pressure_bar1 > press_max_bar1):
+                press_max_bar1 = pressure_bar1
+            if(pressure_bar1 < press_min_bar1):
+                press_min_bar1 = pressure_bar1
+            if(pressure_bar1 > press_max_hour_bar1):
+                press_max_hour_bar1 = pressure_bar1
+            if(pressure_bar1 < press_min_hour_bar1):
+                press_min_hour_bar1 = pressure_bar1
+                
+            #min/max temp/press BAR2
+            if(cTemp_bar2 > tempC_max_bar2):
+                tempC_max_bar2 = cTemp_bar2
+            if (cTemp_bar2 < tempC_min_bar2):
+                tempC_min_bar2 = cTemp_bar2
+            if(cTemp_bar2 > tempC_max_hour_bar2):
+                tempC_max_hour_bar2 = cTemp_bar2
+            if (cTemp_bar2 < tempC_min_hour_bar2):
+                tempC_min_hour_bar2 = cTemp_bar2
+                        
+            if(pressure_bar2 > press_max_bar2):
+                press_max_bar2 = pressure_bar2
+            if(pressure_bar2 < press_min_bar2):
+                press_min_bar2 = pressure_bar2
+            if(pressure_bar2 > press_max_hour_bar2):
+                press_max_hour_bar2 = pressure_bar2
+            if(pressure_bar2 < press_min_hour_bar2):
+                press_min_hour_bar2 = pressure_bar2
              
             print(f"{date}   {current_time}   1     {cTemp_bar1:.2f}\t\t{average_temp_bar1:.2f}\t\t{tempC_min_bar1:.2f}\t\t{tempC_max_bar1:.2f}\t\t{pressure_bar1:.2f}\t\t{average_press_bar1:.2f}\t\t{press_min_bar1:.2f}\t\t{press_max_bar1:.2f}\n")   
             print(f"                        2     {cTemp_bar2:.2f}\t\t{average_temp_bar2:.2f}\t\t{tempC_min_bar2:.2f}\t\t{tempC_max_bar2:.2f}\t\t{pressure_bar2:.2f}\t\t{average_press_bar2:.2f}\t\t{press_min_bar2:.2f}\t\t{press_max_bar2:.2f}\n")
