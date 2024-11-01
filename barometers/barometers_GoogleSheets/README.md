@@ -3,7 +3,7 @@
 <p>É necessário os dar os seguintes comandos no terminal para que o cógido funcione  </p>
 <code>pip install gspread-dataframe</code>
 <code>pip install gspread oauth2client</code>
-><br><br>
+<br><br>
 <i>Não esqueça de verificar se a interface I2C está habilitada</i>
 <h1></h1>
 Obs. Coleta.service deverá estar localizado no caminho /lib/systemd/system
