@@ -1,1 +1,0 @@
-Data          Hora     Disp   Temp_atual       Temp_med         Temp_min        Temp_max        Humi_atual     Humi_med      Humi_min       Humi_max
