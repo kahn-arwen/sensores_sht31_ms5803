@@ -10,29 +10,13 @@ I2C & 1WIRE
 </td>
  </tr>
 </table>
-<p>É necessário os dar os seguintes comandos no terminal para que o código funcione corretamente  </p>
-<code>pip install ms5803py</code>
-<code>sudo pip3 install adafruit-circuitpython-sht31d</code>
-<code>pip install smbus</code>
-<code>sudo apt-get install i2c-tools</code><br><br>
-<i>Não esqueça de verificar se a interface I2C está habilitada</i>
-<h1></h1>
-<b><h4>TEMP_UMI_SENSOR</h4></b>
+<p> <b>#Configurar a raspberry oaradetedw</b>
+<<i>Não esqueça de verificar se a interface I2C está habilitada</i>.
+<b><i>Para habilitar é necessário utilizar "raspi-config! e lá na aba "interface", habilitar</i></b>
+<p>Links Importantes: </p>
+- https://randomnerdtutorials.com/raspberry-pi-ds18b20-python/
+- https://medium.com/@jb.ranchana/write-and-append-dataframes-to-google-sheets-in-python-f62479460cf0
 
-O diretório **temp_umi_sensor** é onde está guardado os códigos referentes ao sensor SHT31, que recebe os dados de Temperatura e Umidade.
-Dentro desse diretório, encontramos o código na linguagem C e Python.
-
-<b><h4>PRESSURE_SENSOR</h4></b>
-O diretório **pressure_sensor** é onde está guardado os códigos referentes ao sensor MS5803, que recebe os dados de Temperatura e Pressão.
-Dentro desse diretório, encontramos o código na linguagem Python.
-
-<b><h4>SENSORES</h4></b>
-O diretório **sensores** é onde está guardado os códigos referentes aos sensores SHT31 e MS5803.
-Recebendo os dados de Temperatura, Umidade e Pressão. Dentro desse diretório, encontramos o código na linguagem Python.
-
-<b><h4>BAROMETERS</h4></b>
-O diretório **Barometers** é onde está guardado o código de comparação entre dois barômetros MS5803.
-Recebendo os dados de Temperatura, Umidade e Pressão. Dentro desse diretório, encontramos o código na linguagem Python.
 
 <h1></h1>
 <h5>Importante!!</h5> 
