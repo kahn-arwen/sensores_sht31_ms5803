@@ -310,6 +310,8 @@ while True:
                     
                     #insert(conn, cur, field_id, value, timestamp)
                     insert(conn, cursor, 4, cTemp_ds, day_time)
+		    insert(conn, cursor, 9, cTemp_sht, day_time)
+
                     #insert(conn, cursor, 7, temp_min_ds_bcd, day_time)
                     #insert(conn, cursor, 8, temp_max_ds_bcd, day_time)
                     sec = 0
