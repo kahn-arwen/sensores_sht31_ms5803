@@ -11,7 +11,7 @@ I2C & 1WIRE
  </tr>
 </table>
 <p> <b>#Configurar a raspberry para ler ambos os sensores:</b>
-<<i>Não esqueça de verificar se a interface I2C e 1W estão habilitadas</i>.
+<p></p><i>Não esqueça de verificar se a interface I2C e 1W estão habilitadas</i>.
 <b><i>Para habilitar é necessário utilizar "raspi-config" e lá na aba "interface", habilitar</i></b>
 <p>Links Importantes: </p>
 - https://randomnerdtutorials.com/raspberry-pi-ds18b20-python/
