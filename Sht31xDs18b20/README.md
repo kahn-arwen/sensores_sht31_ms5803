@@ -14,8 +14,8 @@ I2C & 1WIRE
 <p></p><i>Não esqueça de verificar se a interface I2C e 1W estão habilitadas</i>.
 <b><i>Para habilitar é necessário utilizar "raspi-config" e lá na aba "interface", habilitar</i></b>
 <p>Links Importantes: </p>
-- https://randomnerdtutorials.com/raspberry-pi-ds18b20-python/
-- https://medium.com/@jb.ranchana/write-and-append-dataframes-to-google-sheets-in-python-f62479460cf0
+<p> https://randomnerdtutorials.com/raspberry-pi-ds18b20-python/
+<p> https://medium.com/@jb.ranchana/write-and-append-dataframes-to-google-sheets-in-python-f62479460cf0
 
 
 <h1></h1>
