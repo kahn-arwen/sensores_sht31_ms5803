@@ -50,7 +50,12 @@ hours = [ '00:00:00','01:00:00','02:00:00','03:00:00','04:00:00', #backup de 1 e
           '05:00:00','06:00:00','07:00:00','08:00:00','09:00:00',
           '10:00:00','11:00:00','12:00:00','13:00:00','14:00:00',
           '15:00:00','16:00:00','17:00:00','18:00:00','19:00:00',
-          '20:00:00','21:00:00','22:00:00','23:00:00']
+          '20:00:00','21:00:00','22:00:00','23:00:00', 
+          '00:59:59','01:59:59','02:59:59','03:59:59','04:59:59', #Para caso não ter falha em gravar
+          '05:59:59','06:59:59','07:59:59','08:59:59','09:59:59',
+          '10:59:59','11:59:59','12:59:59','13:59:59','14:59:59',
+          '15:59:59','16:59:59','17:59:59','18:59:59','19:59:59',
+          '20:59:59','21:59:59','22:59:59','23:59:59']
 
 
 tempC_min_sht = float('inf')              
@@ -94,16 +99,16 @@ average_humidity_day_sht  = 0
 average_temp_day_sht   = 0
 average_temp_day_ds   = 0
 
-secBackup_sht = "/home/tecnico/agsolve/temperatureSensors/sec_Backup_sht.txt"
-hourBackup_sht = "/home/tecnico/agsolve/temperatureSensors/hour_Backup_sht.txt"
-dayBackup_sht  = "/home/tecnico/agsolve/temperatureSensors/day_Backup_sht.txt"
+secBackup_sht = "/home/tecnico/agsolve/teste_bcd/sec_Backup_sht.txt"
+hourBackup_sht = "/home/tecnico/agsolve/teste_bcd/hour_Backup_sht.txt"
+dayBackup_sht  = "/home/tecnico/agsolve/teste_bcd/day_Backup_sht.txt"
 
-secBackup_ds = "/home/tecnico/agsolve/temperatureSensors/sec_Backup_ds.txt"
-hourBackup_ds = "/home/tecnico/agsolve/temperatureSensors/hour_Backup_ds.txt"
-dayBackup_ds = "/home/tecnico/agsolve/temperatureSensors/day_Backup_ds.txt"
+secBackup_ds = "/home/tecnico/agsolve/teste_bcd/sec_Backup_ds.txt"
+hourBackup_ds = "/home/tecnico/agsolve/teste_bcd/hour_Backup_ds.txt"
+dayBackup_ds = "/home/tecnico/agsolve/teste_bcd/day_Backup_ds.txt"
 
-hourBackup = "/home/tecnico/agsolve/temperatureSensors/hour_Backup.txt"
-dayBackup = "/home/tecnico/agsolve/temperatureSensors/day_Backup.txt"
+hourBackup = "/home/tecnico/agsolve/teste_bcd/hour_Backup.txt"
+dayBackup = "/home/tecnico/agsolve/teste_bcd/day_Backup.txt"
 
 backupSec_existe_sht = os.path.isfile(secBackup_sht) and os.path.getsize(secBackup_sht) > 0
 backupHour_existe_sht = os.path.isfile(hourBackup_sht) and os.path.getsize(hourBackup_sht) > 0
@@ -289,7 +294,7 @@ while True:
                 barr_2 = [date, current_time, cTemp_ds]
                 worksheet2.append_row(barr_2)
             except Exception as e:
-                print("Erro ao colocar no arq.seg.")
+                print("{date} {current_time} Erro ao escrever na planilha Seg\nErro: {e}. Tentando novamente...\n")
                 
                 
             try:
@@ -310,7 +315,7 @@ while True:
                     
                     #insert(conn, cur, field_id, value, timestamp)
                     insert(conn, cursor, 4, cTemp_ds, day_time)
-		    insert(conn, cursor, 9, cTemp_sht, day_time)
+                    insert(conn, cursor, 9, cTemp_sht, day_time)
 
                     #insert(conn, cursor, 7, temp_min_ds_bcd, day_time)
                     #insert(conn, cursor, 8, temp_max_ds_bcd, day_time)
@@ -336,18 +341,22 @@ while True:
             with open(hourBackup, "a") as file_append:
                 file_append.write(f"{date}   {current_time}   1     {cTemp_sht:.2f}\t\t{average_temp_hour_sht:.2f}\t\t{tempC_min_sht:.2f}\t\t{tempC_max_sht:.2f}\t\t{humidity_sht:.2f}\t\t{average_humidity_hour_sht:.2f}\t\t{humidity_min_sht:.2f}\t\t{humidity_max_sht:.2f}\n")   
                 file_append.write(f"                        2     {cTemp_ds:.2f}\t\t{average_temp_hour_ds:.2f}\t\t{tempC_min_ds:.2f}\t\t{tempC_max_ds:.2f}\n\n")
-           
-          # Escreve na planilha hora 
-            barr_1 = [date, current_time, "SHT31", cTemp_sht, humidity_sht]
-            worksheetH.append_row(barr_1)
-            barr_2 = [date, current_time, "DS18B20", cTemp_ds]
-            worksheetH.append_row(barr_2)
-            
-            barr_1 = [date, current_time,cTemp_sht,humidity_sht]
-            worksheetH1.append_row(barr_1)
-            barr_2 = [date, current_time, cTemp_ds]
-            worksheetH2.append_row(barr_2)
 
+            try: 
+	          # Escreve na planilha hora 
+	            barr_1 = [date, current_time, "SHT31", cTemp_sht, humidity_sht]
+	            worksheetH.append_row(barr_1)
+	            barr_2 = [date, current_time, "DS18B20", cTemp_ds]
+	            worksheetH.append_row(barr_2)
+	            
+	            barr_1 = [date, current_time,cTemp_sht,humidity_sht]
+	            worksheetH1.append_row(barr_1)
+	            barr_2 = [date, current_time, cTemp_ds]
+	            worksheetH2.append_row(barr_2)
+            except Exception as e:
+                print (f"{date} {current_time} Erro ao escrever na planilha Hora\nErro: {e}. Tentando novamente...\n")
+
+		
           # Zera variáveis
             readingCount_hour  = 0
             tempSumC_hour_sht = 0
